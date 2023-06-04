@@ -14,7 +14,8 @@ jobs:
         with:
           node-version: 12
           registry-url: https://npm.pkg.github.com/
-          scope: '@bramov'
+          scope: '@solvt-ai'
+      - run: npm config set '//registry.npmjs.org/:_authToken' "${GH_TOKEN}"
       - run: npm install
       - run: npm publish
         env:
