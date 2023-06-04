@@ -13,7 +13,7 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 12
-          registry-url: https://npm.pkg.github.com/
+          registry-url: https://registry.npmjs.org/
           scope: '@solvt-ai'
       - run: npm config set '//npm.pkg.github.com/:_authToken' "${GH_TOKEN}"
       - run: npm install
