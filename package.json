@@ -1,9 +1,9 @@
 {
   "name": "@solvt-ai/ui-library",
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/bramov"
+    "registry": "https://npm.pkg.github.com/solvt-ai"
   },
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "UI Library for SOLVT.ai",
   "main": "dist/cjs/index.js",
   "scripts": {
