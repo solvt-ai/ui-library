@@ -20,5 +20,5 @@ jobs:
           scope: '@solvt-ai'
       - run: npm config set '//npm.pkg.github.com/:_authToken' "${GH_TOKEN}"
       - run: npm install
-      - run: npm rollup
+      - run: npm run rollup
       - run: npm publish
