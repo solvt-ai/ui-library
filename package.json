@@ -10,11 +10,11 @@
     "rollup": "rollup -c",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "deploy-storybook": "npm run build-storybook && gh-pages -d storybook-static"
+    "create-empty-file": "touch ./storybook-static/.nojekyll",
+    "deploy-storybook": "npm run build-storybook && npm run create-empty-file && gh-pages -d storybook-static -t"
   },
   "author": "bramov",
   "license": "ISC",
-  "private": "false",
   "devDependencies": {
     "@rollup/plugin-commonjs": "^25.0.0",
     "@rollup/plugin-node-resolve": "^15.1.0",
