@@ -1,27 +1,32 @@
 import React from 'react';
 
 import { Meta } from '@storybook/react';
-import Button, { ButtonIntent, ButtonProps } from "./Button";
+import Button, { ButtonIntent, ButtonProps, ButtonSize } from "./Button";
 
 export default {
     title: 'components/Button',
     component: Button,
     argTypes: {
         intent: {
-            options: ['primary', 'outline'],
+            options: [ButtonIntent.Primary, ButtonIntent.Outline],
             control: { type: 'radio' }
         },
         size: {
-            options: ['small', 'medium', 'large'],
+            options: [ButtonSize.Small, ButtonSize.Medium, ButtonSize.Large],
             control: { type: 'select' }
+        },
+        disabled: {
+            control: { type: 'boolean' }
         }
     },
     args: {
         text: 'Test button',
-        intent: 'primary'
+        intent: ButtonIntent.Primary,
+        size: ButtonSize.Medium,
+        disabled: false
     }
 } as Meta<ButtonProps>
 
-export const ButtonStoryTemplate = ({ ...args} ) => <Button {...args} />;
+export const ButtonStoryTemplate = ({ text, ...args }: ButtonProps ) => <Button text={text} {...args} />;
 
 ButtonStoryTemplate.storyName = 'Button';
