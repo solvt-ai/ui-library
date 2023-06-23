@@ -1,3 +1,1 @@
-export { default } from "./Button";
-
-export { ButtonProps, ButtonSize, ButtonIntent } from "./Button";
+export { default as Button, ButtonProps, ButtonSize, ButtonIntent } from "./Button";

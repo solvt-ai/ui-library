@@ -17,13 +17,17 @@ export default {
         },
         disabled: {
             control: { type: 'boolean' }
+        },
+        fluid: {
+            control: { type: 'boolean' }
         }
     },
     args: {
         text: 'Test button',
         intent: ButtonIntent.Primary,
         size: ButtonSize.Medium,
-        disabled: false
+        disabled: false,
+        fluid: false,
     }
 } as Meta<ButtonProps>
 
