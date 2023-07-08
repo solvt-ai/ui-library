@@ -3,7 +3,7 @@
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/solvt-ai"
   },
-  "version": "1.0.3",
+  "version": "1.1.0",
   "description": "UI Library for SOLVT.ai",
   "main": "dist/cjs/index.js",
   "scripts": {
@@ -26,6 +26,7 @@
     "@storybook/react": "^7.0.22",
     "@storybook/react-vite": "^7.0.22",
     "@storybook/testing-library": "^0.0.14-next.2",
+    "@svgr/rollup": "^8.0.1",
     "@types/react": "^18.2.8",
     "gh-pages": "^5.0.0",
     "prop-types": "^15.8.1",

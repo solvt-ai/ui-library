@@ -3,6 +3,7 @@ import commonjs from "@rollup/plugin-commonjs";
 import typescript from "@rollup/plugin-typescript";
 import postcss from "rollup-plugin-postcss";
 import dts from "rollup-plugin-dts";
+import svgr from '@svgr/rollup';
 
 import packageJson from "./package.json" assert { type: "json" };
 
@@ -22,7 +23,12 @@ export default [
       },
     ],
     plugins: [
-      resolve(),
+      svgr(),
+      resolve({
+        alias: {
+          '@solvt-ai/ui-library': './src/components'
+        },
+      }),
       commonjs(),
       typescript({ tsconfig: "./tsconfig.json" }),
       postcss({
@@ -32,11 +38,20 @@ export default [
         minimize: true
       }),
     ],
+    preserveSymlinks: true
   },
   {
     input: "dist/esm/types/index.d.ts",
     output: [{ file: "dist/index.d.ts", format: "esm" }],
     external: [/\.(css|scss)$/],
-    plugins: [dts()],
+    plugins: [dts({
+      compilerOptions: {
+        baseUrl: './src',
+        paths: {
+          '@solvt-ai/ui-library/*': ['components/*']
+        }
+      }
+    })],
+    preserveSymlinks: true
   },
 ];

@@ -1,0 +1,96 @@
+.input {
+  box-sizing: border-box;
+  border-radius: 15px;
+  border: 1px solid rgba(46, 80, 192, 0.80);
+  font-weight: 400;
+  min-width: 200px;
+  color: #333;
+
+  &:disabled {
+    background: #DCDCDC;
+    color: #FFF;
+    border: 1px solid #DCDCDC;
+
+    &::placeholder {
+      color: #FFF;
+    }
+  }
+}
+
+.small {
+  padding: 10px;
+  font-size: 14px;
+
+  ~.icon > img {
+    width: 12px;
+    height: 12px;
+  }
+}
+
+.medium {
+  padding: 14px 15px;
+  font-size: 15px;
+
+
+  ~.icon > img {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+.large {
+  padding: 20px;
+  font-size: 18px;
+
+  ~.icon > img {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.icon {
+  position: absolute;
+  padding: 0 10px;
+  height: 100%;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.left {
+  left: 0;
+}
+
+.right {
+  right: 0;
+}
+
+.inputWrapper {
+  display: inline-flex;
+  position: relative;
+
+  .input:has(~.left) {
+    &.large {
+      padding-left: 40px;
+    }
+    &.medium {
+      padding-left: 30px;
+    }
+    &.small {
+      padding-left: 25px
+    }
+  }
+
+  .input:has(~.right) {
+    &.large {
+      padding-right: 40px;
+    }
+    &.medium {
+      padding-right: 30px;
+    }
+    &.small {
+      padding-right: 25px
+    }
+  }
+}
