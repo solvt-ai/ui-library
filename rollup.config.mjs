@@ -22,6 +22,7 @@ export default [
         sourcemap: true,
       },
     ],
+    external: ["react", "react-dom"],
     plugins: [
       svgr(),
       resolve({
