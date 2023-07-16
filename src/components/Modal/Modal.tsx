@@ -1,4 +1,4 @@
-import React, {ReactNode, useCallback, useEffect, useState} from 'react';
+import React, { ReactNode, useCallback } from 'react';
 import cn from 'classnames';
 
 import styles from './Modal.module.scss';
