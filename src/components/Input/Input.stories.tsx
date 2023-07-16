@@ -1,9 +1,7 @@
 import React from 'react';
 
 import { Meta } from "@storybook/react";
-import Input, {IconPosition, InputProps, InputSize, InputType} from './Input';
-
-import CartIcon from '../../icons/CartIcon';
+import Input, { IconPosition, InputProps, InputSize, InputType } from './Input';
 
 export default {
   title: 'components/Input',
@@ -21,7 +19,7 @@ export default {
       control: { type: 'select' }
     },
     icon: {
-      options: [CartIcon],
+      options: [],
       control: { type: 'select' }
     },
     iconPosition: {
@@ -35,7 +33,7 @@ export default {
     size: InputSize.Medium,
     disabled: false,
     iconPosition: IconPosition.Right,
-    icon: CartIcon
+    icon: undefined
   }
 } as Meta<InputProps>
 

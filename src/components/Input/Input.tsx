@@ -18,7 +18,8 @@ export enum InputSize {
 
 export enum IconPosition {
   Left = 'left',
-  Right = 'right'
+  Right = 'right',
+  None = 'none'
 }
 
 export interface InputProps {
@@ -34,11 +35,11 @@ export interface InputProps {
 
 const Input = ({
   type = InputType.Default, size = InputSize.Medium,
-  value, icon, iconPosition, onChange, ...rest
+  value, icon, iconPosition = IconPosition.None, onChange, ...rest
 }: InputProps) => {
   const [inputValue, setInputValue] = useState(value || '');
   
-  const handleInput = (event: InputEvent) => {
+  const handleInput = (event) => {
     const { target: { value } } = event;
     setInputValue(value);
     
@@ -57,8 +58,8 @@ const Input = ({
         {...rest}
       />
       {icon && (
-        <div className={cn(styles.icon, styles[iconPosition])}>
-          <img src={icon} alt="" />
+        <div className={cn(styles.icon, { [styles[iconPosition]]: iconPosition })}>
+          {icon}
         </div>
       )}
     </div>

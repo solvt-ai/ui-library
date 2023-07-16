@@ -1,5 +1,3 @@
-import BasketIcon from './cart.svg';
-
-export const BasketIconComponent = <img src={BasketIcon} alt="" />;
+import { ReactComponent as BasketIcon } from './cart.svg';
 
 export default BasketIcon;

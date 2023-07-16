@@ -1,5 +1,6 @@
 import resolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
+import url from '@rollup/plugin-url'
 import typescript from "@rollup/plugin-typescript";
 import postcss from "rollup-plugin-postcss";
 import dts from "rollup-plugin-dts";
@@ -24,10 +25,11 @@ export default [
     ],
     external: ["react", "react-dom"],
     plugins: [
-      svgr(),
+      url(),
+      svgr({ icon: true }),
       resolve({
         alias: {
-          '@solvt-ai/ui-library': './src/components'
+          '@solvt-ai/ui-library/components': './src/components'
         },
       }),
       commonjs(),
@@ -49,7 +51,7 @@ export default [
       compilerOptions: {
         baseUrl: './src',
         paths: {
-          '@solvt-ai/ui-library/*': ['components/*']
+          '@solvt-ai/ui-library/components/*': ['components/*']
         }
       }
     })],

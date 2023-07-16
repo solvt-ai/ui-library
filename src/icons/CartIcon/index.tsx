@@ -1,5 +1,3 @@
-import CartIcon from './cart.svg';
-
-export const CartIconComponent = <img src={CartIcon} alt="" />;
+import { ReactComponent as CartIcon } from './cart.svg';
 
 export default CartIcon;
