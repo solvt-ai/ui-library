@@ -1,4 +1,4 @@
-import React, {ChangeEvent, FocusEvent, useEffect, useMemo, useState} from 'react';
+import React, { ChangeEvent, FocusEvent, useState } from 'react';
 
 import styles from './Checkbox.module.scss';
 import cn from "classnames";
@@ -24,6 +24,7 @@ const Checkbox = ({
     if (disabled) {
       return;
     }
+    onBlur?.(event as FocusEvent<HTMLInputElement>);
     setChecked(checked);
     onValueChange?.(checked);
   }

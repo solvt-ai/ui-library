@@ -1,4 +1,4 @@
-import React, { ReactNode, useState } from 'react';
+import React, { FocusEvent, ReactNode, useState } from 'react';
 import cn from 'classnames';
 
 import styles from './Input.module.scss';
@@ -33,7 +33,7 @@ export interface InputProps {
   invalid?: boolean;
   iconPosition?: IconPosition;
   onChange?: (value: string) => void;
-  onBlur?: (value: string) => void;
+  onBlur?: (event: FocusEvent<HTMLInputElement>) => unknown;
 }
 
 const Input = ({
@@ -42,16 +42,16 @@ const Input = ({
 }: InputProps) => {
   const [inputValue, setInputValue] = useState(value || '');
   
+  const handleBlur = (event: FocusEvent<HTMLInputElement>): void => {
+    onBlur?.(event);
+  }
+  
   const handleInput = (event) => {
     const { target: { value } } = event;
     setInputValue(value);
     
     if (onChange) {
       onChange(value);
-    }
-    
-    if (onBlur) {
-      onBlur(value);
     }
   };
   
@@ -62,6 +62,7 @@ const Input = ({
         name={name}
         className={cn(styles.input, styles[size], { [styles.invalid]: invalid })}
         onInput={handleInput}
+        onBlur={handleBlur}
         value={inputValue}
         {...rest}
       />
