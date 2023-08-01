@@ -12,12 +12,16 @@ export default {
     },
     disabled: {
       control: { type: 'boolean' }
+    },
+    invalid: {
+      control: { type: 'boolean' }
     }
   },
   args: {
     value: true,
     label: 'Label for checkbox',
     disabled: false,
+    invalid: false,
   }
 } as Meta<CheckboxProps>
 

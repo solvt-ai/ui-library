@@ -14,7 +14,9 @@ export interface CheckboxProps {
   invalid?: boolean;
 }
 
-const Checkbox = ({ value, name, label, onValueChange, onBlur, onFocus, disabled = false, ...props }: CheckboxProps) => {
+const Checkbox = ({
+  value, name, label, onValueChange, onBlur, onFocus, disabled = false, invalid = false, ...props
+}: CheckboxProps) => {
   const [isChecked, setChecked] = useState(value || false);
   
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -35,7 +37,7 @@ const Checkbox = ({ value, name, label, onValueChange, onBlur, onFocus, disabled
   }
   
   return (
-    <div className={cn(styles.checkbox, {[styles.disabled]: disabled })}>
+    <div className={cn(styles.checkbox, {[styles.disabled]: disabled, [styles.invalid]: invalid })}>
       <label htmlFor={name}>
         <input
           name={name}
