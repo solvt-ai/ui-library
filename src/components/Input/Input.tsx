@@ -24,6 +24,7 @@ export enum IconPosition {
 
 export interface InputProps {
   value?: string;
+  name?: string;
   disabled?: boolean;
   placeholder?: string;
   type?: InputType;
@@ -32,11 +33,11 @@ export interface InputProps {
   invalid?: boolean;
   iconPosition?: IconPosition;
   onChange?: (value: string) => void;
-  onBlur?: () => void;
+  onBlur?: (value: string) => void;
 }
 
 const Input = ({
-  type = InputType.Default, size = InputSize.Medium, invalid = false,
+  name, type = InputType.Default, size = InputSize.Medium, invalid = false,
   value, icon, iconPosition = IconPosition.None, onChange, onBlur, ...rest
 }: InputProps) => {
   const [inputValue, setInputValue] = useState(value || '');
@@ -50,7 +51,7 @@ const Input = ({
     }
     
     if (onBlur) {
-      onBlur();
+      onBlur(value);
     }
   };
   
@@ -58,6 +59,7 @@ const Input = ({
     <div className={styles.inputWrapper}>
       <input
         type={type}
+        name={name}
         className={cn(styles.input, styles[size], { [styles.invalid]: invalid })}
         onInput={handleInput}
         value={inputValue}
