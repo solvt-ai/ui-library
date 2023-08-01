@@ -21,17 +21,19 @@ export interface ButtonProps {
     disabled?: boolean;
     onClick?: () => void;
     fluid?: boolean;
+    type?: 'button' | 'submit'
 }
 
 const Button = ({
     text, size = ButtonSize.Medium, intent = ButtonIntent.Primary,
-    disabled = false, onClick, fluid = false
+    disabled = false, onClick, fluid = false, type = 'button'
 }: ButtonProps) => {
     return (
         <button
             className={cn(styles[intent], styles[size], styles.button, { [styles.fluid]: fluid })}
             disabled={disabled}
             onClick={onClick}
+            type
         >
             {text}
         </button>

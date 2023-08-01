@@ -14,6 +14,9 @@ export default {
     disabled: {
       control: { type: 'boolean' }
     },
+    invalid: {
+      control: { type: 'boolean' }
+    },
     type : {
       options: [InputType.Password, InputType.Default],
       control: { type: 'select' }
@@ -33,7 +36,8 @@ export default {
     size: InputSize.Medium,
     disabled: false,
     iconPosition: IconPosition.Right,
-    icon: undefined
+    icon: undefined,
+    invalid: false
   }
 } as Meta<InputProps>
 

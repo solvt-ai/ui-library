@@ -6,6 +6,10 @@
   min-width: 200px;
   color: #333;
 
+  &:focus {
+    outline: none;
+  }
+
   &:disabled {
     background: #DCDCDC;
     color: #FFF;
@@ -46,6 +50,10 @@
     width: 24px;
     height: 24px;
   }
+}
+
+.invalid {
+  border: 1px solid #DF3F70 !important;
 }
 
 .icon {

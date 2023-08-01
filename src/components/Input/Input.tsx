@@ -29,13 +29,15 @@ export interface InputProps {
   type?: InputType;
   size?: InputSize;
   icon?: ReactNode;
+  invalid?: boolean;
   iconPosition?: IconPosition;
   onChange?: (value: string) => void;
+  onBlur?: () => void;
 }
 
 const Input = ({
-  type = InputType.Default, size = InputSize.Medium,
-  value, icon, iconPosition = IconPosition.None, onChange, ...rest
+  type = InputType.Default, size = InputSize.Medium, invalid = false,
+  value, icon, iconPosition = IconPosition.None, onChange, onBlur, ...rest
 }: InputProps) => {
   const [inputValue, setInputValue] = useState(value || '');
   
@@ -46,13 +48,17 @@ const Input = ({
     if (onChange) {
       onChange(value);
     }
+    
+    if (onBlur) {
+      onBlur();
+    }
   };
   
   return (
     <div className={styles.inputWrapper}>
       <input
         type={type}
-        className={cn(styles.input, styles[size])}
+        className={cn(styles.input, styles[size], { [styles.invalid]: invalid })}
         onInput={handleInput}
         value={inputValue}
         {...rest}
