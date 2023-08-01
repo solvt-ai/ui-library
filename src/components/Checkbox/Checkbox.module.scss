@@ -85,7 +85,7 @@
     border: 1px solid #666666 !important;
 
     &:checked {
-      background-color: #666666;
+      background-color: #666666 !important;
     }
   }
 }
@@ -95,7 +95,15 @@
     border: 1px solid #df3f70;
   }
 
-  span {
+  label, span, input {
     color: #df3f70;
+  }
+
+  label:hover {
+    color: #df3f70;
+
+    span {
+      color: #df3f70;
+    }
   }
 }
