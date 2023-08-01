@@ -33,7 +33,7 @@ const Button = ({
             className={cn(styles[intent], styles[size], styles.button, { [styles.fluid]: fluid })}
             disabled={disabled}
             onClick={onClick}
-            type
+            type={type}
         >
             {text}
         </button>
