@@ -39,13 +39,12 @@ const Checkbox = ({
   
   return (
     <div className={cn(styles.checkbox, {[styles.disabled]: disabled, [styles.invalid]: invalid })}>
-      <label htmlFor={name}>
+      <label htmlFor={name} onChange={handleChange}>
         <input
           name={name}
           type="checkbox"
           checked={isChecked}
           disabled={disabled}
-          onChange={handleChange}
           onBlur={handleBlur}
           onFocus={handleFocus}
           {...props}

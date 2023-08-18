@@ -1,4 +1,6 @@
 import type { StorybookConfig } from "@storybook/react-vite";
+import viteSvgr from "vite-plugin-svgr";
+
 const config: StorybookConfig = {
   stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|ts|tsx)"],
   addons: [
@@ -13,5 +15,11 @@ const config: StorybookConfig = {
   docs: {
     autodocs: "tag",
   },
+  async viteFinal(config) {
+    config = {...config, plugins: [
+      ...config.plugins, viteSvgr()
+    ]}
+    return config;
+  }
 };
 export default config;

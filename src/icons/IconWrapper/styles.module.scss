@@ -1,0 +1,10 @@
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  rect, path, circle {
+    stroke: var(--color);
+    color: var(--color);
+  }
+}
