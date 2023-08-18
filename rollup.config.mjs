@@ -53,19 +53,5 @@ export default [
       }),
     ],
     preserveSymlinks: true
-  },
-  {
-    input: "dist/esm/types/index.d.ts",
-    output: [{ file: "dist/index.d.ts", format: "esm" }],
-    external: [/\.(css|scss)$/],
-    plugins: [dts({
-      compilerOptions: {
-        baseUrl: './src',
-        paths: {
-          '@solvt-ai/ui-library/components/*': ['components/*']
-        }
-      }
-    })],
-    preserveSymlinks: true
-  },
+  }
 ];
