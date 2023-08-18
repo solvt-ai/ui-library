@@ -8,21 +8,32 @@ import svgr from '@svgr/rollup';
 
 import packageJson from "./package.json" assert { type: "json" };
 
+const list = [
+    "src/components/Button/index.ts",
+    "src/components/Checkbox/index.ts",
+    "src/components/Input/index.ts",
+    "src/components/Link/index.ts",
+    "src/components/Modal/index.ts",
+    "src/icons/24/index.ts",
+    "src/icons/30/index.ts"
+];
+
 export default [
   {
-    input: "src/index.ts",
+    input: ["src/index.ts", ...list],
     output: [
       {
-        file: packageJson.main,
+        dir: 'dist',
         format: "cjs",
         sourcemap: true,
       },
       {
-        file: packageJson.module,
+        dir: 'dist',
         format: "esm",
         sourcemap: true,
       },
     ],
+    preserveModules: true,
     external: ["react", "react-dom"],
     plugins: [
       url(),

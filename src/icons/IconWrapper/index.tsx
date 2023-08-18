@@ -11,7 +11,7 @@ export type IconProps = {
 export const IconWrapper = ({ fill, icon, size }: IconProps) => {
   const Icon = icon;
   return (
-    <div className={styles.icon} style={{ width: size, height: size, '--color': fill }}>
+    <div className={styles.icon} style={{ fontSize: size, width: size, height: size, '--color': fill }}>
       <Icon />
     </div>
   );
