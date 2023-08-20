@@ -1,1 +1,1 @@
-export { default as Input, InputProps, InputType, InputSize, IconPosition } from './Input';
+export { default as Input, InputProps, InputType, InputSize, IconPosition, InputIntent } from './Input';

@@ -22,6 +22,11 @@ export enum IconPosition {
   None = 'none'
 }
 
+export enum InputIntent {
+  Primary = 'primary',
+  Outline = 'outline',
+}
+
 export interface InputProps {
   value?: string;
   name?: string;
@@ -34,11 +39,13 @@ export interface InputProps {
   iconPosition?: IconPosition;
   onChange?: (value: string) => void;
   onBlur?: (event: FocusEvent<HTMLInputElement>) => unknown;
+  intent?: InputIntent;
 }
 
 const Input = ({
-  name, type = InputType.Default, size = InputSize.Medium, invalid = false,
-  value, icon, iconPosition = IconPosition.None, onChange, onBlur, ...rest
+  name, type = InputType.Default, size = InputSize.Medium,
+  invalid = false, intent = InputIntent.Outline, value, icon,
+  iconPosition = IconPosition.None, onChange, onBlur, ...rest
 }: InputProps) => {
   const [inputValue, setInputValue] = useState(value || '');
   
@@ -60,7 +67,7 @@ const Input = ({
       <input
         type={type}
         name={name}
-        className={cn(styles.input, styles[size], { [styles.invalid]: invalid })}
+        className={cn(styles.input, styles[size], styles[intent], { [styles.invalid]: invalid })}
         onInput={handleInput}
         onBlur={handleBlur}
         value={inputValue}

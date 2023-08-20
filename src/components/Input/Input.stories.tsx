@@ -1,7 +1,8 @@
 import React from 'react';
 
-import { Meta } from "@storybook/react";
-import Input, { IconPosition, InputProps, InputSize, InputType } from './Input';
+import {Meta} from "@storybook/react";
+import Input, {IconPosition, InputIntent, InputProps, InputSize, InputType} from './Input';
+import {ClosedEyeIcon} from "../../icons";
 
 export default {
   title: 'components/Input',
@@ -28,6 +29,10 @@ export default {
     iconPosition: {
       options: [IconPosition.Left, IconPosition.Right],
       control: { type: 'radio' }
+    },
+    intent: {
+      options: [InputIntent.Outline, InputIntent.Primary],
+      control: { type: 'select' }
     }
   },
   args: {
@@ -36,8 +41,9 @@ export default {
     size: InputSize.Medium,
     disabled: false,
     iconPosition: IconPosition.Right,
-    icon: undefined,
-    invalid: false
+    icon: <ClosedEyeIcon />,
+    invalid: false,
+    intent: InputIntent.Outline
   }
 } as Meta<InputProps>
 
