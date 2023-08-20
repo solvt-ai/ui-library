@@ -6,34 +6,21 @@ import postcss from "rollup-plugin-postcss";
 import dts from "rollup-plugin-dts";
 import svgr from '@svgr/rollup';
 
-import packageJson from "./package.json" assert { type: "json" };
-
-const list = [
-    "src/components/Button/index.ts",
-    "src/components/Checkbox/index.ts",
-    "src/components/Input/index.ts",
-    "src/components/Link/index.ts",
-    "src/components/Modal/index.ts",
-    "src/icons/24/index.ts",
-    "src/icons/30/index.ts"
-];
-
 export default [
   {
-    input: ["src/index.ts", ...list],
+    input: "src/index.ts",
     output: [
       {
-        dir: 'dist',
+        file: "dist/cjs/index.js",
         format: "cjs",
         sourcemap: true,
       },
       {
-        dir: 'dist',
+        file: "dist/esm/index.js",
         format: "esm",
         sourcemap: true,
       },
     ],
-    preserveModules: true,
     external: ["react", "react-dom"],
     plugins: [
       url(),
@@ -52,6 +39,20 @@ export default [
         minimize: true
       }),
     ],
+    preserveSymlinks: true
+  },
+  {
+    input: "dist/esm/types/index.d.ts",
+    output: [{ file: "dist/index.d.ts", format: "esm" }],
+    external: [/\.(css|scss)$/],
+    plugins: [dts({
+      compilerOptions: {
+        baseUrl: './src',
+        paths: {
+          '@solvt-ai/ui-library/components/*': ['components/*']
+        }
+      }
+    })],
     preserveSymlinks: true
   }
 ];
