@@ -15,10 +15,11 @@ export interface ModalProps {
     open?: boolean;
     onClose?: () => void;
     size?: ModalSize;
+    withHeader?: boolean
 }
 
 
-const Modal = ({ open, size = ModalSize.Medium, children, onClose, title }: ModalProps) => {
+const Modal = ({ open, size = ModalSize.Medium, children, onClose, title, withHeader = false }: ModalProps) => {
 
     const handleClick = useCallback((event) => {
         event.stopPropagation(true);
@@ -41,7 +42,7 @@ const Modal = ({ open, size = ModalSize.Medium, children, onClose, title }: Moda
                 <div className={styles.modalWrapper} onKeyPress={handleKeyPress}>
                     <div className={cn(styles.modal, styles[size])}>
                         { title && (
-                            <div className={styles.heading}>{title}</div>
+                          <div className={withHeader ? styles.header : styles.heading}>{title}</div>
                         )}
                         <div className={styles.content}>
                             {children}

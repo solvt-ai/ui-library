@@ -17,22 +17,26 @@ export default {
         },
         open: {
             disable: true
+        },
+        withHeader: {
+            control: { type: 'boolean' }
         }
     },
     args: {
         size: ModalSize.Medium,
         title: "Title",
+        withHeader: true,
         open: false
     }
 } as Meta<ModalProps>
 
-export const ModalStoryTemplate = () => {
+export const ModalStoryTemplate = ({ title, ...args }: ModalProps) => {
     const [isOpen, setOpen] = useState(false);
 
     return (
         <div style={{ width: '560px', display: 'flex', justifyContent: 'center', margin: '80px auto'}}>
             <Button text="Click me to open Modal" onClick={() => setOpen(true)} />
-            <Modal title="Title" open={isOpen} onClose={() => setOpen(false)}>Empty Modal Content</Modal>
+            <Modal title={title} {...args} open={isOpen} onClose={() => setOpen(false)}>Empty Modal Content</Modal>
         </div>
     );
 }

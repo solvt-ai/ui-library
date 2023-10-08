@@ -23,7 +23,6 @@
   z-index: 10;
   border-radius: 16px;
   box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.04);
-  padding: 20px;
 }
 
 .small {
@@ -39,11 +38,28 @@
 }
 
 .heading {
-  font-size: 32px;
   color: black;
-  margin-bottom: 10px;
+  padding: 16px 30px;
+  font-family: Lato;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 140%;
 }
 
 .content {
   color: black;
+  padding: 20px 30px;
+}
+
+.header {
+  background-color: #E8EEFE;
+  border-radius: 15px 15px 0 0;
+  padding: 16px 30px;
+  color: rgba(46, 80, 192, 0.80);
+  font-family: Lato;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 140%;
 }
