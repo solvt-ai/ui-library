@@ -7,3 +7,5 @@ export { Modal, ModalProps, ModalSize } from "./Modal";
 export { Link, LinkProps, LinkSize } from "./Link";
 
 export { Checkbox, CheckboxProps } from './Checkbox';
+
+export { Picker, PickerProps, PickerType } from './Picker';
