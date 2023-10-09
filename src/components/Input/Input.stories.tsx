@@ -1,8 +1,8 @@
 import React from 'react';
 
-import {Meta} from "@storybook/react";
-import Input, {IconPosition, InputIntent, InputProps, InputSize, InputType} from './Input';
-import {ClosedEyeIcon} from "../../icons";
+import { Meta } from "@storybook/react";
+import Input, { IconPosition, InputIntent, InputProps, InputSize, InputType } from './Input';
+import { ClosedEyeIcon } from "../../icons";
 
 export default {
   title: 'components/Input',
