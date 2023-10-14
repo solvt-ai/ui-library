@@ -8,7 +8,7 @@ export default {
     component: Button,
     argTypes: {
         intent: {
-            options: [ButtonIntent.Primary, ButtonIntent.Outline],
+            options: [ButtonIntent.Primary, ButtonIntent.Outline, ButtonIntent.Danger, ButtonIntent.Alert],
             control: { type: 'radio' }
         },
         size: {

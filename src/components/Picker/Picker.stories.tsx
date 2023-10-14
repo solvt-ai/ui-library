@@ -1,10 +1,10 @@
 import React from 'react';
 
-import {Meta} from '@storybook/react';
+import { Meta } from '@storybook/react';
 
-import Picker, {PickerProps, PickerType} from "./Picker";
+import Picker, { PickerProps, PickerType } from "./Picker";
 
-import {CalendarIcon, ClockIcon} from "../../icons";
+import { CalendarIcon, ClockIcon } from "../../icons";
 
 import styles from './Picker.module.scss';
 
@@ -13,7 +13,7 @@ export default {
   component: Picker,
 } as Meta<PickerProps>
 
-export const PickerStoryTemplate = (props: PickerProps) => (
+export const PickerStoryTemplate = () => (
   <div className={styles.pickers}>
     <Picker icon={<CalendarIcon fill="#262C3CCC" />} type={PickerType.Date} placeholder="Date" />
     <Picker type={PickerType.Time} placeholder="Time" />

@@ -11,7 +11,9 @@ export enum ButtonSize {
 
 export enum ButtonIntent {
     Primary = 'primary',
-    Outline = 'outline'
+    Outline = 'outline',
+    Alert = 'alert',
+    Danger = 'danger'
 }
 
 export interface ButtonProps {

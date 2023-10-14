@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap');
+
+.toast {
+  width: 450px;
+  border-radius: 15px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  .title {
+    color: #FFF;
+    font-family: Lato;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+
+  .description {
+    color: #FFF;
+    font-family: Lato;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.progress {
+  height: 5px;
+  background-color: yellow;
+  animation: 10s progress linear;
+}
+
+@keyframes progress {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.success {
+  background-color: #05A649;
+}
+
+.error {
+  background-color: #D6353D;
+}
+
+.warning {
+  background-color: #EB9238;
+}
+
+.info {
+  background-color: #00ADCB;
+}
