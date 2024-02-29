@@ -32,20 +32,21 @@
 }
 
 .primary {
-  background: linear-gradient(88.53deg, #B1FCFA -33.83%, rgba(176, 250, 250, 0.998011) -20.83%, rgba(172, 243, 248, 0.991833) -7.82%, rgba(164, 232, 244, 0.981218) 5.19%, rgba(154, 216, 239, 0.966095) 18.2%, rgba(141, 195, 232, 0.946692) 31.2%, rgba(125, 170, 224, 0.923667) 44.21%, rgba(107, 143, 215, 0.898181) 57.22%, rgba(89, 115, 206, 0.871819) 70.22%, rgba(71, 87, 197, 0.846333) 83.23%, rgba(56, 63, 189, 0.823308) 96.24%, rgba(42, 42, 183, 0.803905) 109.24%, rgba(32, 26, 178, 0.788782) 122.25%, rgba(24, 14, 174, 0.778167) 135.26%, rgba(20, 8, 172, 0.771989) 148.27%, rgba(19, 6, 171, 0.77) 161.27%);
+  background-color: #5A60C9;
   border: none;
   color: #FFFFFF;
 
   &:disabled {
-    background: linear-gradient(0deg, rgba(145, 153, 182, 0.4), rgba(145, 153, 182, 0.4)), #FFFFFF;
+    background-color: #D3D6E1;
+    color: #6C717D;
   }
 
   &:hover:not(:disabled) {
-    background: linear-gradient(89.03deg, #B1FCFA -34.35%, rgba(176, 250, 250, 0.998011) -14.18%, rgba(172, 243, 248, 0.991833) 5.99%, rgba(164, 232, 244, 0.981218) 26.16%, rgba(154, 216, 239, 0.966095) 46.33%, rgba(141, 195, 232, 0.946692) 66.5%, rgba(125, 170, 224, 0.923667) 86.68%, rgba(107, 143, 215, 0.898181) 106.85%, rgba(89, 115, 206, 0.871819) 127.02%, rgba(71, 87, 197, 0.846333) 147.19%, rgba(56, 63, 189, 0.823308) 167.36%, rgba(42, 42, 183, 0.803905) 187.53%, rgba(32, 26, 178, 0.788782) 207.7%, rgba(24, 14, 174, 0.778167) 227.88%, rgba(20, 8, 172, 0.771989) 248.05%, rgba(19, 6, 171, 0.77) 268.22%);
+    background-color: #7B81CE;
   }
 
   &:active:not(:disabled) {
-    background: linear-gradient(88.53deg, #B1FCFA -33.83%, rgba(176, 250, 250, 0.998011) -20.83%, rgba(172, 243, 248, 0.991833) -7.82%, rgba(164, 232, 244, 0.981218) 5.19%, rgba(154, 216, 239, 0.966095) 18.2%, rgba(141, 195, 232, 0.946692) 31.2%, rgba(125, 170, 224, 0.923667) 44.21%, rgba(107, 143, 215, 0.898181) 57.22%, rgba(89, 115, 206, 0.871819) 70.22%, rgba(71, 87, 197, 0.846333) 83.23%, rgba(56, 63, 189, 0.823308) 96.24%, rgba(42, 42, 183, 0.803905) 109.24%, rgba(32, 26, 178, 0.788782) 122.25%, rgba(24, 14, 174, 0.778167) 135.26%, rgba(20, 8, 172, 0.771989) 148.27%, rgba(19, 6, 171, 0.77) 161.27%);
+    background-color: #5A62C2;
   }
 }
 
@@ -91,25 +92,23 @@
 }
 
 .outline {
-  border: 1px solid #2E50C0;
-  background: -webkit-linear-gradient(88.84deg, #B1FCFA -101.66%, rgba(176, 250, 250, 0.998011) -84.1%, rgba(172, 243, 248, 0.991833) -66.54%, rgba(164, 232, 244, 0.981218) -48.98%, rgba(154, 216, 239, 0.966095) -31.42%, rgba(141, 195, 232, 0.946692) -13.86%, rgba(125, 170, 224, 0.923667) 3.7%, rgba(107, 143, 215, 0.898181) 21.26%, rgba(89, 115, 206, 0.871819) 38.82%, rgba(71, 87, 197, 0.846333) 56.38%, rgba(56, 63, 189, 0.823308) 73.94%, rgba(42, 42, 183, 0.803905) 91.5%, rgba(32, 26, 178, 0.788782) 109.05%, rgba(24, 14, 174, 0.778167) 126.61%, rgba(20, 8, 172, 0.771989) 144.17%, rgba(19, 6, 171, 0.77) 161.73%), #FFFFFF;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: #2e50c0;
-  color: #2E50C0;
+  border: 1px solid #5A60C9;
+  background-color: #FFFFFF;
+  color: #5A60C9;
 
   &:disabled {
-    -webkit-background-clip: border;
-    -webkit-text-fill-color: #9199B6;
-    background: #FFFFFF;
-    border: 1px solid #9199B6;
+    border: 1px solid #D3D6E1;
+    color: #6C717D;
   }
 
   &:hover:not(:disabled) {
-    border: 1px solid #B1FCFA;
+    border: 1px solid #7B81CE;
+    color: #7B81CE;
   }
 
   &:active:not(:disabled) {
-    border: 1px solid #2E50C0;
+    border: 1px solid #5A62C2;
+    color: #5A62C2;
   }
 }
 
