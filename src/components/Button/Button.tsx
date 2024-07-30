@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import cn from 'classnames';
 
 import styles from './Button.module.scss';
@@ -23,12 +23,13 @@ export interface ButtonProps {
     disabled?: boolean;
     onClick?: () => void;
     fluid?: boolean;
-    type?: 'button' | 'submit'
+    type?: 'button' | 'submit',
+    icon?: ReactNode
 }
 
 const Button = ({
     text, size = ButtonSize.Medium, intent = ButtonIntent.Primary,
-    disabled = false, onClick, fluid = false, type = 'button'
+    disabled = false, onClick, fluid = false, type = 'button', icon
 }: ButtonProps) => {
     return (
         <button
@@ -37,6 +38,7 @@ const Button = ({
             onClick={onClick}
             type={type}
         >
+            { icon && <div className={styles.icon}>{icon}</div> }
             {text}
         </button>
     );

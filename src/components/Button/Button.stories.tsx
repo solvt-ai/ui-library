@@ -2,6 +2,9 @@ import React from 'react';
 
 import { Meta } from '@storybook/react';
 import Button, { ButtonIntent, ButtonProps, ButtonSize } from "./Button";
+import  {InfoIcon, SuccessIcon, WarningIcon } from "../../icons";
+
+const ICONS = { InfoIcon, SuccessIcon, WarningIcon };
 
 export default {
     title: 'components/Button',
@@ -20,7 +23,16 @@ export default {
         },
         fluid: {
             control: { type: 'boolean' }
-        }
+        },
+        icon: {
+            options: Object.keys(ICONS),
+            mapping: {
+                InfoIcon: <InfoIcon />,
+                SuccessIcon: <SuccessIcon />,
+                WarningIcon: <WarningIcon />
+            },
+            control: { type: 'select' }
+        },
     },
     args: {
         text: 'Test button',
