@@ -1,5 +1,0 @@
-import{j as l}from"./jsx-runtime-29545a09.js";import{B as a,a as t,b as e}from"./Button-e67551b5.js";import"./index-76fb7be0.js";import"./_commonjsHelpers-de833af9.js";import"./index-a587463d.js";const y={title:"components/Button",component:a,argTypes:{intent:{options:[t.Primary,t.Outline,t.Danger,t.Alert],control:{type:"radio"}},size:{options:[e.Small,e.Medium,e.Large],control:{type:"select"}},disabled:{control:{type:"boolean"}},fluid:{control:{type:"boolean"}}},args:{text:"Test button",intent:t.Primary,size:e.Medium,disabled:!1,fluid:!1}},o=({text:i,...p})=>l(a,{text:i,...p});o.storyName="Button";var r,n,s;o.parameters={...o.parameters,docs:{...(r=o.parameters)==null?void 0:r.docs,source:{originalSource:`({
-  text,
-  ...args
-}: ButtonProps) => <Button text={text} {...args} />`,...(s=(n=o.parameters)==null?void 0:n.docs)==null?void 0:s.source}}};const f=["ButtonStoryTemplate"];export{o as ButtonStoryTemplate,f as __namedExportsOrder,y as default};
-//# sourceMappingURL=Button.stories-38931042.js.map
