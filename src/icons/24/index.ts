@@ -11,3 +11,6 @@ export { SwapIcon } from './SwapIcon';
 export { TrashIcon } from './TrashIcon';
 export { UploadIcon } from './UploadIcon';
 export { UsersIcon } from './UsersIcon';
+export { PackageIcon } from './PackageIcon';
+export { LockIcon } from './LockIcon';
+export { EditProfileIcon } from './EditProfileIcon';
